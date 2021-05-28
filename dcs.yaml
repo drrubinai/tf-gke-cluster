@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-05-27T21:14:28Z"
+  labels:
+    role: pingdataconsole
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:role: {}
+      f:spec:
+        f:ports:
+          .: {}
+          k:{"port":8443,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector:
+          .: {}
+          f:role: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2021-05-27T21:14:28Z"
+  name: pingdataconsole
+  namespace: default
+  resourceVersion: "13637"
+  selfLink: /api/v1/namespaces/default/services/pingdataconsole
+  uid: a6633b4c-dc10-4377-92bd-b02996540bb3
+spec:
+  ports:
+  - name: https
+    port: 8443
+    protocol: TCP
+    targetPort: 8443
+    nodePort: 30007
+  selector:
+    role: pingdataconsole
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
